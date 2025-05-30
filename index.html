@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family:'Times New Roman', Times, serif;
+      background: linear-gradient(to right, black, navy);
+      color: white;
+      font-size: 18px;
+
+    nav {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 1em;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 1em;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .home-photo {
+     width: 200px;
+     height: 200px;
+     border-radius: 50%;
+     object-fit: cover;
+     display: block;
+     margin: 2em auto;
+     border: 4px solid white;
+}
+
+
+    section {
+      display: none;
+      padding: 2em;
+      min-height: 80vh;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    .active h1{
+        font-size: 40px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    .about-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 1.5em;
+      height: 60vh;
+    }
+
+    .about-container div {
+      font-size: 18px;
+      padding: 1em;
+      border-radius: 10px;
+    }
+
+    .about-container img {
+      width: 50%;
+      height: auto;
+      border: none;      
+    }
+
+    .img1 {
+      align-self: start;
+      justify-self: start;
+      
+    }
+
+    img2 {
+      align-self: end;
+      justify-self: end;
+      width: 200px;
+    }
+
+    .project-container, .contact-container {
+      display: flex;
+      flex-direction: row;
+      gap: 1.5em;
+      flex-wrap: wrap;
+    }
+
+    .project, .contact-item {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 1em;
+      border-radius: 10px;
+      border: 2px solid white;
+      flex: 1 1 30%;
+    }
+
+    a {
+      color: #ADD8E6;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a onclick="showPage('home')">Home</a>
+    <a onclick="showPage('about')">About</a>
+    <a onclick="showPage('projects')">Projects</a>
+    <a onclick="showPage('contact')">Contact</a>
+  </nav>
+
+  <section id="home" class="active">
+    <h1>Toyin's Portfolio</h1>
+    <img src="./about2.jpg" class="home-photo">
+    <p> Get to know me, Explore my work and get in touch!</p>
+  </section>
+
+
+  <section id="about">
+    <h1>About Me</h1>
+    <div class="about-container">
+      <div class="img1"><img src="./about1.jpg" alt="Image 1"></div>
+      <div><p>Hi!<br> I'm Toyin, a 16 year old Babcock university undergraduate.<br> I'm currently undergoing the program of Bsc.(Hons) 
+      in Software Engineering<br> I'm Yoruba(Ilaje) from Ondo State.<br>I enjoy watching movies, listen to music and creating stuffs like this.<br> It's funny how my whole life 
+      I wanted to be a Pediatrician till i encountered chemistry in SS1.<br> During my encounter I realized that chemistry is NOT for me,<br>
+      so my hostel warden adviced me that since I had passion in tech related activities I should look for a career in that aspect.<br>
+      Thank God for my parents that were willing to support any career path i choose. <br> scroll down for more </p></div>
+      <div><p>Want to see some of my works?<br>
+        The next page will be showing some of the projects I've done using mostly HTML and CSS.</p></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h1>My Projects</h1>
+    <div class="project-container">
+      <div class="project">
+        <h2><a href="https://codepen.io/oriretandtoyin/pen/GgKjGMZ">Project One</a></h2>
+        <p>This project is about my First day in Web development class. MY very first project! PLease Check it out
+        </p>
+      </div>
+      <div class="project">
+        <h2><a href="https://codepen.io/oriretandtoyin/pen/qEWyGXr">Project Two</a></h2>
+        <p>This one shpuld be the third one i did in that class, it was a project on making tables with HTML. You can check it out too!</p>
+      </div>
+      <div class="project">
+        <h2><a href="https://toyin-od.github.io/toyin-oriretan/">Project Three</a></h2>
+        <p>I love this one, it's the first work i ever deployed. It wouldn't hurt to check this one out too </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h1>Contact Me</h1>
+    <div class="contact-container">
+      <div class="contact-item">
+        <h3>Phone</h3>
+        <p><a href="tel:+2347042149081">+2347042149081</a></p>
+      </div>
+      <div class="contact-item">
+        <h3>Email</h3>
+        <p><a href="mailto:toyinoriretan2008@gmail.com">toyinoriretan2008@gmail.com</a></p>
+      </div>
+      <div class="contact-item">
+        <h3>Location</h3>
+        <p><a href="https://maps.google.com" target="Warri">View on Map</a></p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function showPage(pageId) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
